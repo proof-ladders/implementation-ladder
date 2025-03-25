@@ -1,0 +1,11 @@
+[package]
+name = "long-subtraction-hax"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hax-lib = { git = "https://github.com/cryspen/hax/", branch = "hax-lib-int-fixes" }
+rand = "0.9.0"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(hax)'] }
