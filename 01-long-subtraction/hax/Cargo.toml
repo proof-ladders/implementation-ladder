@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-hax-lib = { git = "https://github.com/cryspen/hax/", branch = "hax-lib-int-fixes" }
+hax-lib = { git = "https://github.com/cryspen/hax/" }
 rand = "0.9.0"
 
 [lints.rust]

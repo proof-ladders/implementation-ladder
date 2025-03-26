@@ -35,7 +35,7 @@ dependencies = [
 [[package]]
 name = "hax-lib"
 version = "0.2.0"
-source = "git+https://github.com/cryspen/hax/?branch=hax-lib-int-fixes#7a5b182fc564c87027169c5b9e3e644a5e22d1b8"
+source = "git+https://github.com/cryspen/hax/#40ecdbece586089ed87f1ba633ebbb6a3248a15f"
 dependencies = [
  "hax-lib-macros",
  "num-bigint",
@@ -45,7 +45,7 @@ dependencies = [
 [[package]]
 name = "hax-lib-macros"
 version = "0.2.0"
-source = "git+https://github.com/cryspen/hax/?branch=hax-lib-int-fixes#7a5b182fc564c87027169c5b9e3e644a5e22d1b8"
+source = "git+https://github.com/cryspen/hax/#40ecdbece586089ed87f1ba633ebbb6a3248a15f"
 dependencies = [
  "hax-lib-macros-types",
  "paste",
@@ -58,7 +58,7 @@ dependencies = [
 [[package]]
 name = "hax-lib-macros-types"
 version = "0.2.0"
-source = "git+https://github.com/cryspen/hax/?branch=hax-lib-int-fixes#7a5b182fc564c87027169c5b9e3e644a5e22d1b8"
+source = "git+https://github.com/cryspen/hax/#40ecdbece586089ed87f1ba633ebbb6a3248a15f"
 dependencies = [
  "proc-macro2",
  "quote",
