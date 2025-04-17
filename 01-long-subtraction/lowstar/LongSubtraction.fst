@@ -8,7 +8,9 @@ module S = FStar.Seq
 open FStar.Mul
 open FStar.HyperStack.ST
 
-// Our specification-level type
+// Our specification-level type. Not meant to be extracted (typically, this
+// would be in a separate file that is eliminated wholesale).
+inline_for_extraction noextract
 let t = nat
 
 // Low-level type ("stateful"). We pick words to be unsigned 64-bit integers.

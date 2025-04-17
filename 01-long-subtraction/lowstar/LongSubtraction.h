@@ -12,8 +12,6 @@
 
 #include <immintrin.h>
 
-typedef krml_checked_int_t LongSubtraction_t;
-
 typedef uint64_t *LongSubtraction_s;
 
 typedef uint8_t LongSubtraction_borrow;
