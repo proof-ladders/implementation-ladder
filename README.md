@@ -82,7 +82,7 @@ subfolder: [01-long-subtraction](01-long-subtraction/)
 | Tool      | Proof Status      | Limitations        | Difficulty Rating |
 | --------- | ----------------- | -----------------  | ----------------- |
 | Bedrock2  | ✅                |                    |                   |
-| Low\*     | spec only         |                    |                   |
+| Low\*     | ✅                |                    | Low               |
 | Hax       | impl only         | no aliasing (Rust) |                   |
 
 Commentary: Rust does not permit the equal-or-disjoint aliasing pattern.
