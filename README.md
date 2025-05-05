@@ -39,7 +39,7 @@ The tools we showcase in this repository are:
   [Reference](http://adam.chlipala.net/theses/andreser.pdf)
 - Hax is a tool that can verify a subset of Rust by extraction to a proof assistant. Rust programs
   are annotated with refinements, pre- and post-conditions, loop invariants, and more. The output of
-  the translation is a pure program that does not mention memory at all. The main backend is F\*.
+  the translation is a pure program that does not mention memory at all. The main backend are F\* and Rocq.
   [Website](https://hax.cryspen.com)
 - Aeneas verifies a subset of Rust by extraction to a proof assistant. Rust programs are exactly as
   written the programmer, and devoid of any annotations or extra syntax. The output of the
@@ -51,12 +51,12 @@ The tools we showcase in this repository are:
 Without looking at examples, the tools above can already be differentiated along a few axes.
 - consuming or producing code:
   - code-producing tools *generate* executable output: Low\* and Bedrock2 both *produce* C code from
-    F\* and Coq, respectively
+    F\* and Rocq, respectively
   - code-consuming tools *take actual code* as an input: Hax and Aeneas both consume Rust code, while
     Gobra consumes Go code
 - interactive vs automated:
   - some tools emphasize automation: Hax and Low\* with F\* (and Z3 under the hood), Gobra with Viper
-  - some tools emphasize interactivity: Aeneas with Lean, Bedrock2 with Coq
+  - some tools emphasize interactivity: Aeneas with Lean, Bedrock2 with Rocq, Hax with Rocq
 - among the code-consuming tools:
   - intrinsic tools like Hax or Gobra favor an annotated source where the programmer conducts the
     proof by adding pre- and post-conditions, intermediary assertions, and calls to lemmas
@@ -72,6 +72,7 @@ team.
 - Hax was used to author a verified implementation of ML-KEM soon to be integrated in BoringSSL
 - Bedrock2 was used to author a library of verified elliptic curves that have been integrated in
   BoringSSL
+- All three of these have been combined in the [libcrux](https://github.com/cryspen/libcrux) library.
 
 # Arithmetic problems
 
