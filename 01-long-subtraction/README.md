@@ -8,7 +8,7 @@ these long integers. This requires consuming and returning a *borrow* bit, which
 carry bit for addition.
 
 The subtraction operation thus takes two input long integers and one input borrow bit, and produces
-ont output long integer, and one output borrow bit. Both the input and output long integers are
+one output long integer, and one output borrow bit. Both the input and output long integers are
 passed by address; borrow bits are passed directly and the output borrow bit is the return value of
 the function.
 
