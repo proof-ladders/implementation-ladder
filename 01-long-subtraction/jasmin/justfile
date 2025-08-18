@@ -1,0 +1,11 @@
+# Produce assembly from the Jasmin implementation
+compile:
+	jasminc -arch x86-64 -o main.s main.jazz
+
+# Produce an EasyCrypt model of the Jasmin implementation
+extract:
+	jasmin2ec --output longSubtraction.ec main.jazz
+
+# Runs EasyCrypt to check all files in this directory
+prove:
+	easycrypt runtest easycrypt.config all
