@@ -1,0 +1,62 @@
+/* Long integers are represented as an array of “limbs”. Each limb is a machine
+  “word”. The number of limbs is fixed: this data-type represents bounded
+  (unsigned) numbers. */
+param int LIMBS = 4;
+type word = u64;
+type integer = word[LIMBS];
+
+/* A borrow is a single bit of information encoded in the least significant bit
+  of an 8-bit machine-word.*/
+type borrow = u8;
+
+/* Decodes a borrow into a boolean.
+  On x86, shifting to the right by one position extracts the least significant
+  bit into the carry flag CF. */
+inline
+fn of_borrow(reg borrow b) -> reg bool {
+  reg bool cf;
+  ?{cf}, _ = #SHR_8(b, 1);
+  return cf;
+}
+
+/* Encodes a boolean as a borrow. */
+inline
+fn to_borrow(reg bool b) -> reg borrow {
+  reg borrow result;
+  result = #SETcc(b);
+  return result;
+}
+
+/* Subtraction with borrow.
+  [long_subtraction(out, x, y, b)] computes (x − y − b), writes the result
+  into out, and returns the final borrow. */
+export
+fn long_subtraction(reg ptr integer out x y, reg borrow borrow) -> reg ptr integer, reg borrow {
+  inline int i;
+  reg bool b = of_borrow(borrow);
+  for i = 0 to LIMBS {
+    reg word p q r;
+    p = x[i];
+    q = y[i];
+    b, r = p - q - b;
+    out[i] = r;
+  }
+  borrow = to_borrow(b);
+  return out, borrow;
+}
+
+/* In-place subtraction with borrow.
+  [long_subtraction(x, y, b)] computes (x − y − b), writes the result into x,
+  and returns the final borrow. */
+export
+fn long_subtraction_in_place(reg ptr integer x y, reg borrow borrow) -> reg ptr integer, reg borrow {
+  inline int i;
+  reg bool b = of_borrow(borrow);
+  for i = 0 to LIMBS {
+    reg word q;
+    q = y[i];
+    b, x[i] = x[i] - q - b;
+  }
+  borrow = to_borrow(b);
+  return x, borrow;
+}
