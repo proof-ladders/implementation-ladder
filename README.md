@@ -85,5 +85,6 @@ subfolder: [01-long-subtraction](01-long-subtraction/)
 | Bedrock2  | ✅                |                    |                   |
 | Low\*     | ✅                |                    | Low               |
 | Hax       | impl only         | no aliasing (Rust) |                   |
+| Jasmin    | ✅                |                    |                   |
 
 Commentary: Rust does not permit the equal-or-disjoint aliasing pattern.
