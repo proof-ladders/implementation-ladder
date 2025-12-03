@@ -1,0 +1,14 @@
+name = "long_subtraction"
+version = "0.1.0"
+defaultTargets = ["long_subtraction"]
+
+[[lean_lib]]
+name = "LongSubtraction"
+
+[[lean_exe]]
+name = "long_subtraction"
+root = "Main"
+
+[[require]]
+name = "aeneas"
+path = "/Users/jonathan/Code/aeneas/backends/lean"
